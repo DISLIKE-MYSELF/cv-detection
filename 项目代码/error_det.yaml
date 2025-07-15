@@ -1,0 +1,33 @@
+# YAML file for error detection dataset configuration
+
+# Paths to training, validation, and test datasets
+path: /content/drive/MyDrive/Colab Notebooks/datasets/error_det  # Base dataset directory
+
+# Images and labels
+train: /content/drive/MyDrive/Colab Notebooks/datasets/error_det/images/train  # Path to training images
+val: /content/drive/MyDrive/Colab Notebooks/datasets/error_det/val_images    # Path to validation images
+
+# Number of classes (set to 1 based on the log output "Overriding model.yaml nc=80 with nc=1")
+nc: 1
+
+# Class names
+names:
+  0: error  # Replace "error" with the actual name of the class, if necessary
+
+# 数据增强参数
+lr0: 0.01                  # 初始学习率
+momentum: 0.937            # 动量
+weight_decay: 0.0005       # 权重衰减
+
+degrees: 10.0              # 旋转角度范围（±10度）
+translate: 0.1             # 平移范围（±10%）
+scale: [1.5, 3.0]          # 缩放范围从 1.5 到 3.0 倍
+shear: 2.0                 # 剪切范围（±2度）
+perspective: 0.0           # 透视变换概率
+flipud: 0.0                # 上下翻转概率
+fliplr: 0.5                # 左右翻转概率
+hsv_h: 0.015               # 色调调整范围（±1.5%）
+hsv_s: 0.7                 # 饱和度变换范围（±70%）
+hsv_v: 0.4                 # 亮度变换范围（±40%）
+mixup: 0.0                 # MixUp 数据增强的概率
+mosaic: 1.0                # Mosaic 数据增强的概率
